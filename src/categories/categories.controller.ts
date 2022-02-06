@@ -16,7 +16,6 @@ import { ApiTags } from '@nestjs/swagger';
 import { ApiFile } from 'src/decoraters/api-file.decorator';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
-import { NotFoundError } from 'rxjs';
 
 @ApiTags('categories')
 @Controller('categories')
