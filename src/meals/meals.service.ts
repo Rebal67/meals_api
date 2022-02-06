@@ -31,15 +31,4 @@ export class MealsService {
   remove(id: number) {
     return this.mealsRepository.delete(id);
   }
-
-  findByCategory(id: number) {
-    return this.mealsRepository.find({
-      relations: ['categories'],
-      where: {
-        categories: {
-          id: id,
-        },
-      },
-    });
-  }
 }
