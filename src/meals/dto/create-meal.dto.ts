@@ -8,7 +8,7 @@ import {
   IsString,
 } from 'class-validator';
 import { Category } from 'src/categories/entities/category.entity';
-import { Complexty, Effort } from '../entities/meal.entity';
+import { Complexity, Effort } from '../entities/meal.entity';
 
 export class CreateMealDto {
   @IsString()
@@ -17,8 +17,8 @@ export class CreateMealDto {
   @IsEnum(Effort)
   effort: Effort;
 
-  @IsEnum(Complexty)
-  complexity: Complexty;
+  @IsEnum(Complexity)
+  complexity: Complexity;
 
   @IsNumber()
   duration: number;

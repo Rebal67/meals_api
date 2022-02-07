@@ -13,6 +13,7 @@ export class MealsService {
   ) {}
   create(createMealDto: CreateMealDto) {
     const meal = this.mealsRepository.create(createMealDto);
+    console.log(meal);
     return this.mealsRepository.save(meal);
   }
 

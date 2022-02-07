@@ -6,16 +6,16 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-export enum Complexty {
-  Simple,
-  Difficult,
-  Hard,
+export enum Complexity {
+  Simple = 'Simple',
+  Difficult = 'Difficult',
+  Hard = 'Hard',
 }
 
 export enum Effort {
-  Little,
-  Min,
-  Max,
+  Little = 'Little',
+  Min = 'Min',
+  Max = 'Max',
 }
 @Entity()
 export class Meal {
@@ -25,11 +25,11 @@ export class Meal {
   @Column()
   title: string;
 
-  @Column({ type: 'enum', enum: Effort })
+  @Column({ type: 'enum', enum: Effort, default: Effort.Little })
   effort: Effort;
 
-  @Column({ type: 'enum', enum: Complexty })
-  complexity: Complexty;
+  @Column({ type: 'enum', enum: Complexity, default: Complexity.Simple })
+  complexity: Complexity;
 
   @Column({ nullable: true })
   mealImage: string;
