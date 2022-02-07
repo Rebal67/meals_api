@@ -57,4 +57,8 @@ export class MealsController {
 
     return this.mealsService.update(id, { mealImage: file.filename });
   }
+  @Get('/category/:id')
+  getByCategory(@Param('id') id: number) {
+    return this.mealsService.getByCategory(id);
+  }
 }

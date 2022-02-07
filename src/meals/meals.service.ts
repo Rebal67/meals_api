@@ -32,4 +32,28 @@ export class MealsService {
   remove(id: number) {
     return this.mealsRepository.delete(id);
   }
+
+  getByCategory(id: number) {
+    return this.mealsRepository.find({
+      relations: ['categories'],
+      where: (qb) => {
+        qb.where('categoryId = :id', {
+          id,
+        });
+      },
+    });
+    // for conditional join change join and mapping
+    // return this.mealsRepository
+    //   .createQueryBuilder('meal')
+    //   .leftJoinAndMapMany(
+    //     'meal.categories',
+    //     'category',
+    //     'category',
+    //     'category.id = :id',
+    //     {
+    //       id,
+    //     },
+    //   )
+    //   .getMany();
+  }
 }

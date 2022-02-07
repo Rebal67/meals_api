@@ -22,7 +22,7 @@ export class CategoriesService {
   }
 
   findOne(id: number) {
-    return this.categoriesRepositry.findOne(id);
+    return this.categoriesRepositry.findOne(id, { relations: ['meals'] });
   }
 
   update(id: number, updateCategoryDto) {
