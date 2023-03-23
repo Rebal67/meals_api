@@ -20,7 +20,7 @@ import { ConfigModule } from '@nestjs/config';
       database: process.env.DATABASE_TYPE || 'meals',
       host: process.env.HOST || 'localhost',
       username: process.env.DATABASE_USER || 'root',
-      password: process.env.DATABASE_PASSWORD || '',
+      password: process.env.DATABASE_PASSWORD || 'test',
       synchronize: true,
     }),
     CategoriesModule,
